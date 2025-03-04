@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+  <h1 class="display-3">Semi Restful TV Shows - Shows Index Page</h1>
+
+  <table class="table m-5">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Release Date</th>
+        <th scope="col">Network</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for show in shows %}
+      <tr>
+        <th scope="row">{{show.id}}</th>
+        <td>{{show.title}}</td>
+        <td>{{show.release_date|date:'M jS, Y'}}</td>
+        <td>{{show.network}}</td>
+        <td><a href="/show/{{show.id}}">Show</a> | <a href="/show/{{show.id}}/edit">Edit</a> | <a href="/show/{{show.id}}/delete">Delete</a></td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+{% endblock %}

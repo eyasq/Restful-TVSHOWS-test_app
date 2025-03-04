@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<div class="card" style="width: 400px;">
+    <img src="{{show.image_link}}" class="card-img-top" style="max-height:400px; max-width: 400px;" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{show.title}}</h5>
+      <p class="card-text">Released on: {{show.release_date}}</p>
+      <p class="card-text">Show ID: {{show.id}}</p>
+      <p class="fw-bold">Description</p>
+      <p class="card-text"> {{show.description}}</p>
+
+      <a href="/" class="btn btn-primary">Back to Index</a><p class="mt-3">
+      <a href="/show/{{show.id}}/edit">Edit</a> &nbsp;    <a href="/show/{{show.id}}/delete">Delete</a></p>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
